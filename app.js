@@ -4,9 +4,26 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
-app.set('views', path.join(__dirname, '/application/views'));
+mongoose.connect('mongodb://localhost/places');
+let db = mongoose.connection;
 
+// check db connection
+db.once('open', () => {
+  console.log("MongoDB Connection: Successful");
+});
+
+// check for db errors
+db.on('error', (err) => {
+  console.log("MongoDB Connection: " + err);
+});
+
+app.set('views', path.join(__dirname, '/application/views'));
 app.set('view engine', 'ejs');
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
   var appName = "AppJam+";
