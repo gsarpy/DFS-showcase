@@ -23,15 +23,15 @@ app.get('/event/:id', (req, res) => {
 });
 
 app.get('/event/:id/judge/:j_id', (req, res) => {
-  eventID = req.param.id;
-  judgeID = req.param.j_id;
+  eventID = req.params.id;
+  judgeID = req.params.j_id;
   res.render('pages/judge');
 });
 
 app.get('/event/:id/mentor/:m_id', (req, res) => {
   res.render('pages/mentor', {
-    eventID: req.param.id,
-    mentorID: req.param.id
+    eventID: req.params.id,
+    mentorID: req.params.id
   });
 });
 
