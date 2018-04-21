@@ -3,8 +3,9 @@ const app = express();
 const path = require('path');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const db_source = require('./dbConfig');
 
-mongoose.connect('mongodb://localhost/places');
+mongoose.connect(db_source);
 let db = mongoose.connection;
 
 // check db connection
