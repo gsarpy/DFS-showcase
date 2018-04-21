@@ -46,11 +46,18 @@ app.get('/event/:id/judge/:j_id', (req, res) => {
   res.render('pages/judge');
 });
 
-app.get('/event/:id/mentor/:m_id', (req, res) => {
+app.get('/event/:id/mentors', (req, res) => {
   res.render('pages/mentor', {
     eventID: req.params.id,
     mentorID: req.params.id
   });
+});
+
+app.get('/event/:id/mentor/:m_id', (req, res) => {
+	res.render('pages/mentor', {
+		eventID: req.params.id,
+		mentorID: req.params.id
+	});
 });
 
 app.get('/admin', (req, res) => {
