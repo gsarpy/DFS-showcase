@@ -14,6 +14,71 @@
         <h1><%= appName %></h1>
         <p>Welcome</p>
     </div>
+    <div class="container">
+        <h1>Admin</h1>
+        <h2>Event Name</h2>
+            
+        
+            <table class="table">
+           <thead>
+             <tr class="tr tableHead">
+              <th class="th first-name-sort">Judges <i class="sort-icon-first fas fa-sort-down fa-2x hide-icon"></i></th>
+              <th class="th"></th>
+            </tr>        
+           </thead>
+          <tbody>
+            <% for(var i=0; i< judges.length; i++) { %>
+                <td>judges[i]</td>
+                <td>
+                    <button type="button" class="btn btn-outline-dark">Edit</button>
+                    <button type="button" class="btn btn-outline-danger">Delete</button>
+                </td>
+            <% }); %>
+        
+           <div class="form-group">
+          <label for="exampleSelect1">
+            </tbody>
+          </table>
+            Add Judge 
+          </label>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Name" aria-label="Recipient's username" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" type="button">Submit</button>
+            </div>
+          </div> 
+             
+             
+            <table class="table">
+           <thead>
+             <tr class="tr tableHead">
+              <th class="th first-name-sort">Teams <i class="sort-icon-first fas fa-sort-down fa-2x hide-icon"></i></th>
+              <th class="th"></th>
+            </tr>        
+           </thead>
+          <tbody>
+                <% for(var i=0; i< teams.length; i++) { %>
+                    <td>teams[i]</td>
+                    <td>
+                        <button type="button" class="btn btn-outline-dark">Edit</button>
+                        <button type="button" class="btn btn-outline-danger">Delete</button>
+                    </td>
+                <% }); %>
+              </tbody>
+          </table>
+      
+            <div class="form-group">
+          <label for="exampleSelect1">
+            Add Team 
+          </label>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Name" aria-label="Recipient's username" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" type="button">Submit</button>
+            </div>
+          </div>    
+        
+         </div>
 </main>
 
 <footer>

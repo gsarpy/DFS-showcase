@@ -80,7 +80,16 @@ app.get('/event/:id/mentor/:m_id', (req, res) => {
 
 // Admin Routes
 app.get('/admin', (req, res) => {
-  res.render('pages/admin/index', {});
+  res.render('pages/admin/index', {
+    judges: [
+      'Jon Doe',
+      'Jane Doe'
+    ],
+    teams: [
+      'Code Ninjas',
+      'Team Coders'
+    ]
+  });
 });
 
 app.get('/login', (req, res) => {
