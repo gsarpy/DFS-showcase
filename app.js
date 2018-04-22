@@ -82,6 +82,10 @@ app.get('/admin', (req, res) => {
   res.render('pages/admin/index', {});
 });
 
+app.get('/login', (req, res) => {
+  res.render('pages/admin/login', {});
+});
+
 
 let PORT = 8080;
 app.listen(PORT, () => {
