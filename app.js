@@ -43,7 +43,8 @@ app.get('/event/:id', (req, res) => {
 app.get('/event/:id/judge/:j_id', (req, res) => {
   eventID = req.params.id;
   judgeID = req.params.j_id;
-  res.render('pages/judge');
+  teams =
+  res.render('pages/judge', {});
 });
 
 app.get('/event/:id/mentor/:m_id', (req, res) => {
@@ -55,6 +56,10 @@ app.get('/event/:id/mentor/:m_id', (req, res) => {
 
 app.get('/admin', (req, res) => {
   res.render('pages/admin/index', {});
+});
+
+app.get('/login', (req, res) => {
+  res.render('pages/admin/login', {});
 });
 
 
