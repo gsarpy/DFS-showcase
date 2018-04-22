@@ -68,7 +68,16 @@ app.get('/event/:id/mentor/:m_id', (req, res) => {
 });
 
 app.get('/admin', (req, res) => {
-  res.render('pages/admin/index', {});
+  res.render('pages/admin/index', {
+    judges: [
+      'Jon Doe',
+      'Jane Doe'
+    ],
+    teams: [
+      'Code Ninjas',
+      'Team Coders'
+    ]
+  });
 });
 
 
