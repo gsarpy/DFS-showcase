@@ -19,6 +19,7 @@ db.on('error', (err) => {
 });
 
 const Mentor = require('./application/models/Mentor.js');
+const Team = require('./application/models/team.js');
 
 app.set('views', path.join(__dirname, '/application/views'));
 app.set('view engine', 'ejs');
@@ -64,10 +65,10 @@ app.get('/event/:id/judge/:j_id', (req, res) => {
 
 // Mentor Routes
 app.get('/event/:id/mentors', (req, res) => {
-  res.render('pages/mentors/mentor', {
-    eventID: req.params.id,
-    mentorID: req.params.id
-  });
+	Team.find().then((response) => {
+		let mentor = response;
+		res.render('pages/mentors/mentor', {mentor});
+	})
 });
 
 app.get('/event/:id/mentor/:m_id', (req, res) => {
