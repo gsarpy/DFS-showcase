@@ -1,1 +1,74 @@
-<h1><%= judgeID %></h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+</head>
+<body class="container">
+
+<header>
+    <% include ../partials/header %>
+    
+</header>
+    <h1><%= judgeID %></h1>
+    <div class="container">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th scope="col">Team Name</th>
+                  <th scope="col">Scored</th>
+                  <th scope="col">View</th>
+                </tr>
+              </thead>
+              <tbody>
+                    <tr>
+                        <% for(var i=0; i< teams.length; i++) { %>
+                            <td><%= teams[i].name %></td>
+                            <% if(teams[i].scores){ %> 
+                                <td>True</td>
+                                <% } else { %>
+                                <td>False</td>
+                                <% } %>
+                            <td>
+                                <a href="" class="btn btn-primary">Score Team</a>
+                            </td>
+                        <% }); %>
+                    </tr>                                
+                  <!-- <th scope="row">Team #1</th>
+                  <td>True</td>
+                  <td>
+                    <a href="" class="btn btn-primary">Score Team</a>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Team #2</th>
+                  <td>False</td>
+                  <td>
+                    <a href="" class="btn btn-primary">Score Team</a>
+                  </td>
+                  </td>
+              
+                  <tr>
+                  <th scope="row">Team #3</th>
+                  <td>False</td>
+                  <td>
+                    <a href="" class="btn btn-primary">Score Team</a>
+                  </td>
+                  </td>
+                  <tr>
+                  <th scope="row">Team #4</th>
+                  <td>False</td>
+                  <td>
+                    <a href="" class="btn btn-primary">Score Team</a>
+                  </td>
+                  </td>
+             -->
+              </tbody>
+            </table>
+            </div>
+
+<footer>
+    <% include ../partials/footer %>
+</footer>
+
+</body>
+</html>
