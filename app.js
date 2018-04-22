@@ -18,6 +18,8 @@ db.on('error', (err) => {
   console.log("MongoDB Connection: " + err);
 });
 
+const Mentor = require('./application/models/Mentor.js');
+
 app.set('views', path.join(__dirname, '/application/views'));
 app.set('view engine', 'ejs');
 
@@ -46,20 +48,22 @@ app.get('/event/:id/judge/:j_id', (req, res) => {
   res.render('pages/judge');
 });
 
+// Mentor Routes
 app.get('/event/:id/mentors', (req, res) => {
-  res.render('pages/mentor', {
+  res.render('pages/mentors/mentor', {
     eventID: req.params.id,
     mentorID: req.params.id
   });
 });
 
 app.get('/event/:id/mentor/:m_id', (req, res) => {
-	res.render('pages/mentor', {
+	res.render('pages/mentors/teams', {
 		eventID: req.params.id,
 		mentorID: req.params.id
 	});
 });
 
+// Admin Routes
 app.get('/admin', (req, res) => {
   res.render('pages/admin/index', {});
 });
