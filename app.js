@@ -45,7 +45,21 @@ app.get('/event/:id', (req, res) => {
 app.get('/event/:id/judge/:j_id', (req, res) => {
   eventID = req.params.id;
   judgeID = req.params.j_id;
-  res.render('pages/judge');
+  res.render('pages/judge', {
+    judgeID,
+    teams: [
+      {
+        name: 'Team 1',
+        school: 'elementary school',
+        scores: null
+      },
+      {
+        name: 'Team 2',
+        school: 'another school',
+        scores: 90
+      }
+    ]
+  });
 });
 
 // Mentor Routes
