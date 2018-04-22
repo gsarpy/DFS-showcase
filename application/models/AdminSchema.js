@@ -7,7 +7,7 @@ let AdminSchema = new mongoose.Schema({
     required: true,
     trim: true
   },
-  name: {
+  username: {
     type: String,
     unique: true,
     required: true,
@@ -24,4 +24,4 @@ let AdminSchema = new mongoose.Schema({
 });
 
 let AdminSchema = mongoose.model('Admin', AdminSchema);
-module.exports = User;
+module.exports = AdminSchema;
