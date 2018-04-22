@@ -11,6 +11,10 @@ let Team = new mongoose.Schema({
   school_name: {
     type: String,
     trim: true,
+  },
+  team_name: {
+    type: String,
+    trim: true,
   }
 });
 
